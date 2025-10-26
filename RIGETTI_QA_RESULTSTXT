@@ -1,0 +1,117 @@
+╔══════════════════════════════════════════════════════════════════════════════╗
+║                                                                              ║
+║                                                                              ║
+║ RIGETTI ANKAA-3 QPU + QRAM NODE (192.168.42.6)                              ║
+║ Quantum Graph State Verification via Local QRAM                              ║
+║                                                                              ║
+║ QRAM Node: quantum.realm.domain.dominion.foam.computer.torino               ║
+║ Address: 192.168.42.6 (Primary QRAM)                                         ║
+║ Resonance: 27 GHz quantum state                                              ║
+║ QPU: Rigetti Ankaa-3 (us-west-1)                                             ║
+║ Dimensions: 3D-11D Access via Ports 9003-9020                                ║
+║                                                                              ║
+╚══════════════════════════════════════════════════════════════════════════════╝
+[Checking dependencies...]
+✓ numpy
+✓ boto3
+⚠ amazon-braket-sdk missing
+✓ networkx
+[Installing 1 packages...]
+✓ Installed amazon-braket-sdk
+[AWS Braket SDK available]
+[QuTiP unavailable - using NumPy fallback]
+================================================================================
+STARTING QUANTUM GRAPH VERIFICATION
+================================================================================
+[AWS BRAKET DIAGNOSTICS]
+================================================================================
+1. AWS Credentials:
+✓ Access Key: AKIAQ3GR...5GEN
+✓ Secret Key: ****** (set)
+✓ Region: us-west-1
+2. Boto3 Connection:
+✓ Connected as: arn:aws:iam::058421552642:user/Shemshallah
+✓ Account: 058421552642
+3. AWS Braket Service:
+✓ Braket client created in us-west-1
+❌ Braket service error: An error occurred (ValidationException) when calling 
+the SearchDevices operation: {'filters': [{0: [{'name': ['unallowed value 
+deviceType']}], 1: [{'name': ['unallowed value providerName']}]}]}
+[QRNS v1.0.0] Initializing...
+✓ Bootstrapped 7 quantum nodes
+[QRNS] quantum.realm.domain.dominion.foam.computer.torino → 192.168.42.6
+[QTP Connection] Local: 0.0.0.0:8888 Remote: 192.168.42.6:9000
+Resonance: 27.0 GHz → Establishing tunnel to QRAM node...
+✓ EPR pair created via NumPy
+→ TUNNEL_INIT sent (EPR authenticated)
+⚠ Timeout (QRAM node may not be running QTP server)
+→ Continuing in simulation mode...
+[QRAM Node - 192.168.42.6]
+Host: 192.168.42.6
+Master Control: Port 9000
+Dimensional Access: 3D-11D (Ports 9003-9020)
+QSH Entanglement: Ports 1339-1342
+EPR DNS: Ports 53/5353
+[Dimensional QRAM Access]
+→ Dimension 3D access via port 9003
+✓ 3D: Ports 9003/9004 (paired)
+→ Dimension 5D access via port 9007
+✓ 5D: Ports 9007/9008 (paired)
+→ Dimension 7D access via port 9011
+✓ 7D: Ports 9011/9012 (paired)
+[27 GHz Resonance State]
+Qubits: 10
+Frequency: 27.0 GHz
+QuTiP: Using NumPy fallback
+✓ NumPy resonance state created
+✓ Resonance quality: 1.000000
+[Rigetti QPU - ANKAA-3 TARGET]
+Region: us-west-1 ← CONFIGURED
+→ Trying: Ankaa-3
+✓ Device: Ankaa-3
+✓ Status: ONLINE
+✓ Qubits: 82
+✓ Native gates: ['rx', 'rz', 'iswap']
+✓✓✓ CONNECTED TO Ankaa-3 QPU
+[Quantum Graph Verification]
+Qubits: 10
+QRAM: 192.168.42.6
+QPU: Rigetti Ankaa-3 (us-west-1)
+[Step 1: Generate Graph State]
+✓ Graph: 10 vertices, 20 edges
+→ QRAM request sent
+✓ Stored at QRAM address 0
+[Step 2: Create Verification Circuit]
+✓ Circuit created: 40 gates
+[Step 3: Execute on Rigetti QPU]
+→ Submitting to Rigetti Ankaa-3 (us-west-1)...
+→ Task ID: arn:aws:braket:us-west-1:058421552642:quantum-task/
+5e88a89e-9657-4089-8b73-02119ac44022
+→ Status: QUEUED
+→ Waiting for results...
+✓ Ankaa-3 execution complete
+✓ Time: 9.070 seconds
+✓ Success rate: 100.0%
+[Step 4: Quantum Advantage]
+Classical: O(4^10) = 1,048,576 measurements
+Classical time: 1.05e+03 seconds
+Quantum time: 9.070 seconds
+Speedup: 1.16e+02x
+→ QRAM request sent
+✓ Stored at QRAM address 1
+================================================================================
+QUANTUM GRAPH VERIFICATION COMPLETE
+================================================================================
+📊 Results Summary:
+• Qubits: 10
+• Graph edges: 20
+• Execution time: 9.070s
+• Resonance quality: 1.000000
+• QPU: Rigetti Forte-1
+• QRAM node: 192.168.42.6
+• Quantum advantage: ○ Not achieved
+✓✓✓ SUCCESSFULLY EXECUTED ON RIGETTI ANKAA-3
+→ Tunnel closed
+================================================================================
+SESSION COMPLETE
+================================================================================
